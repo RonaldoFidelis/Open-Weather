@@ -9,18 +9,21 @@ let box = document.querySelector('.box')
 let container = document.querySelector('.container-content');
 let container_error = document.querySelector('.container-error')
 
-
 async function previsao(cidade) {
     const lang = 'pt_br';
     const chave_api = 'fd09144ec2677cbc9cfb5ee486269b3b'
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`
 
     const get_data = await fetch(`${url}`).then(Response => Response.json());
+    console.log(get_data)
 
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
         container.style.display = 'none';
         box.style.height = '400px';
+        box.style.backgroundImage = 'linear-gradient(#ffff,#ffff)';
+        input_cidade.style.backgroundColor = '#e2effb';
+        btn_procurar.style.backgroundColor = '#e2effb';
         return;
     } else {
         container.style.display = 'flex';
@@ -31,14 +34,29 @@ async function previsao(cidade) {
     temperatura.innerHTML = `${get_data.main.temp.toFixed(0)}<sup>°C</sup>`;
     
     if (get_data.weather[0].main == 'Rain') {
+        box.style.backgroundImage = 'linear-gradient(#DCE9F2 25%, #A7CCFC)';
+        input_cidade.style.backgroundColor = '#e2effb';
+        btn_procurar.style.backgroundColor = '#e2effb';
         img.src = 'assets/rain.png'
     } else if (get_data.weather[0].main == 'Clouds') {
+        box.style.backgroundImage = 'linear-gradient(#FFDF01 10%, #C3C8C4 50%)';
+        input_cidade.style.backgroundColor = '#F2F2C2';
+        btn_procurar.style.backgroundColor = '#F2F2C2';
         img.src = 'assets/cloud.png'
     } else if (get_data.weather[0].main == 'Clear') {
+        box.style.backgroundImage = 'linear-gradient(#FCD48F 55%, #FDC360)';
+        input_cidade.style.backgroundColor = '#FBE6BF';
+        btn_procurar.style.backgroundColor = '#FBE6BF';
         img.src = 'assets/clear.png'
     } else if (get_data.weather[0].main == 'Mist') {
+        box.style.backgroundImage = 'linear-gradient(#C3C8C4 55%, #AEB1AE)';
+        input_cidade.style.backgroundColor = '#D8DEDA';
+        btn_procurar.style.backgroundColor = '#D8DEDA';
         img.src = 'assets/mist.png'
     } else {
+        box.style.backgroundImage = 'linear-gradient(#C7FBFF 30%, #84D2EF)';
+        input_cidade.style.backgroundColor = '#FFFFFF';
+        btn_procurar.style.backgroundColor = '#FFFFFF';
         img.src = 'assets/snow.png'
     }
 
