@@ -5,7 +5,7 @@ let temperatura = document.querySelector('.temp');
 let clima_cidade = document.querySelector('.about-prevision');
 let humidade = document.querySelector('#humidity-porce');
 let velocidade_vento = document.querySelector('#wind-km');
-let box = document.querySelector('.box')
+let box = document.querySelector('.box');
 let container = document.querySelector('.container-content');
 let container_error = document.querySelector('.container-error')
 
@@ -37,32 +37,32 @@ async function previsao(cidade) {
         box.style.backgroundImage = 'linear-gradient(#DCE9F2 25%, #A7CCFC)';
         input_cidade.style.backgroundColor = '#e2effb';
         btn_procurar.style.backgroundColor = '#e2effb';
-        img.src = 'assets/rain.png'
+        img.src = 'assets/rain.png';
     } else if (get_data.weather[0].main == 'Clouds') {
         box.style.backgroundImage = 'linear-gradient(#FFDF01 10%, #C3C8C4 50%)';
         input_cidade.style.backgroundColor = '#F2F2C2';
         btn_procurar.style.backgroundColor = '#F2F2C2';
-        img.src = 'assets/cloud.png'
+        img.src = 'assets/cloud.png';
     } else if (get_data.weather[0].main == 'Clear') {
         box.style.backgroundImage = 'linear-gradient(#FCD48F 55%, #FDC360)';
         input_cidade.style.backgroundColor = '#FBE6BF';
         btn_procurar.style.backgroundColor = '#FBE6BF';
-        img.src = 'assets/clear.png'
+        img.src = 'assets/clear.png';
     } else if (get_data.weather[0].main == 'Mist') {
         box.style.backgroundImage = 'linear-gradient(#C3C8C4 55%, #AEB1AE)';
         input_cidade.style.backgroundColor = '#D8DEDA';
         btn_procurar.style.backgroundColor = '#D8DEDA';
-        img.src = 'assets/mist.png'
+        img.src = 'assets/mist.png';
     } else {
         box.style.backgroundImage = 'linear-gradient(#C7FBFF 30%, #84D2EF)';
         input_cidade.style.backgroundColor = '#FFFFFF';
         btn_procurar.style.backgroundColor = '#FFFFFF';
-        img.src = 'assets/snow.png'
+        img.src = 'assets/snow.png';
     }
 
     clima_cidade.textContent = `${get_data.weather[0].description}`;
     humidade.textContent = `${get_data.main.humidity}%`;
-    velocidade_vento.textContent = `${get_data.wind.speed * 3.701.toFixed()}Km/h`
+    velocidade_vento.textContent = `${get_data.wind.speed * 3.701.toFixed()}Km/h`;
 }
 
 btn_procurar.addEventListener('click', () => {
