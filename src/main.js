@@ -9,13 +9,13 @@ let box = document.querySelector('.box')
 let container = document.querySelector('.container-content');
 let container_error = document.querySelector('.container-error')
 
+const lang = 'pt_br';
+const chave_api = 'fd09144ec2677cbc9cfb5ee486269b3b';
+
 async function previsao(cidade) {
-    const lang = 'pt_br';
-    const chave_api = 'fd09144ec2677cbc9cfb5ee486269b3b'
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`;
 
     const get_data = await fetch(`${url}`).then(Response => Response.json());
-    console.log(get_data)
 
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
