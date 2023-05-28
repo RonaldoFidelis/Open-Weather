@@ -27,14 +27,9 @@ async function previsao(cidade) {
         container_error.style.display = 'none';
         box.style.height = '400px';
     }
-    
+
     temperatura.innerHTML = `${get_data.main.temp.toFixed(0)}<sup>°C</sup>`;
-
-    clima_cidade.textContent = `${get_data.weather[0].description}`;
     
-    humidade.textContent = `${get_data.main.humidity}%`;
-    velocidade_vento.textContent = `${get_data.wind.speed * 3.701.toFixed()}Km/h`
-
     if (get_data.weather[0].main == 'Rain') {
         img.src = 'assets/rain.png'
     } else if (get_data.weather[0].main == 'Clouds') {
@@ -46,6 +41,10 @@ async function previsao(cidade) {
     } else {
         img.src = 'assets/snow.png'
     }
+
+    clima_cidade.textContent = `${get_data.weather[0].description}`;
+    humidade.textContent = `${get_data.main.humidity}%`;
+    velocidade_vento.textContent = `${get_data.wind.speed * 3.701.toFixed()}Km/h`
 }
 
 btn_procurar.addEventListener('click', () => {
