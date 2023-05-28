@@ -1,6 +1,6 @@
 ## Projeto de aplicação web para previsão do tempo consumindo OpenWeather API
 
-<img src=".assets/print.png">
+<img src="assets/print.png">
 
 ## Tecnologias
 
