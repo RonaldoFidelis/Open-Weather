@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- script -->
+    <script defer src="src/main.js"></script>
+    <title>Tempo</title>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <div class="container-search">
+            <input type="
+            text
+            " class="input-location" placeholder="Digite o local">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="container-error">
+            <h1 class="title-error">A cidade não foi identificada :(</h1>
+            <img src="assets/404.png" class="img-error">
+        </div>
+
+        <div class="container-content">
+            <div class="prevision-location">
+                <img src="assets/cloud.png" class="status-location img-prevision">
+            </div>
+
+            <div class="prevision-api">
+                <p class="temp">0 <sup>°C</sup></p>
+                <p class="about-prevision">Ensolarado</p>
+            </div>
+
+            <div class="more-info">
+
+                <div class="humidity">
+                    <i class="fa-sharp fa-solid fa-droplet icon"></i>
+                    <div class="info-humidity">
+                        <span id="humidity-porce">40%</span>
+                        <p>Humidade</p>
+                    </div>
+                </div>
+
+                <div class="wind">
+                    <i class="fa-solid fa-wind icon"></i>
+                    <div class="info-wind">
+                        <span id="wind-km">12Km/H</span>
+                        <p>Velocidade</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
