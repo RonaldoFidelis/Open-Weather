@@ -18,13 +18,16 @@ async function previsao(cidade) {
     const get_data = await fetch(`${url}`).then(Response => Response.json());
 
     if (get_data.cod == '404') {
-        container.style.display = 'none';
         container_error.style.display = 'flex';
+        container.style.display = 'none';
+        box.style.height = '400px';
         return;
+    } else {
+        container.style.display = 'flex';
+        container_error.style.display = 'none';
+        box.style.height = '400px';
     }
-
-    container.style.display = 'flex';
-    box.style.height = '400px';
+    
     temperatura.innerHTML = `${get_data.main.temp.toFixed(0)}<sup>°C</sup>`;
 
     clima_cidade.textContent = `${get_data.weather[0].description}`;
