@@ -25,12 +25,13 @@ async function previsao(cidade) {
     const op = horas >= 0 ? '+' : '';
     const data = new Date();
     const data_temp = data.toLocaleString('pt-BR', { timeZone: `Etc/GMT${op}${horas}`})
-    const atual = data_temp.slice(12,14);
+    const hr_atual = new Array(data_temp.slice(12,14));
+    const min_atual = new Array(data_temp.slice(15,17));
 
-    if (atual[1,2] >= 0 || atual[1,2] <= 11){
-        hours.textContent = `${atual}AM`;
+    if (hr_atual.value >= 0 || hr_atual.value <= 11){
+        hours.textContent = `${hr_atual}:${min_atual} AM`;
     }else{
-        hours.textContent = `${atual}PM`;
+        hours.textContent = `${hr_atual}:${min_atual} PM`;
     }
 
     if (get_data.cod == '404') {
