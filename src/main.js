@@ -34,7 +34,7 @@ async function previsao(cidade) {
     //     hours.textContent = `${hr_atual}:${min_atual} PM`;
     // }
 
-    hours.textContent = `${data.getHours}`
+    hours.textContent = `${data.getHours()}`
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
         container.style.display = 'none';
