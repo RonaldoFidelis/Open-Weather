@@ -28,12 +28,13 @@ async function previsao(cidade) {
     const hr_atual = new Array(data_temp.slice(12,14));
     const min_atual = new Array(data_temp.slice(15,17));
 
-    if (hr_atual.value >= 0 || hr_atual.value <= 11){
-        hours.textContent = `${hr_atual}:${min_atual} AM`;
-    }else{
-        hours.textContent = `${hr_atual}:${min_atual} PM`;
-    }
+    // if (hr_atual[0] >= 0 || hr_atual[0] <= 11){
+    //     hours.textContent = `${hr_atual}:${min_atual} AM`;
+    // }else{
+    //     hours.textContent = `${hr_atual}:${min_atual} PM`;
+    // }
 
+    hours.textContent = `${data.getHours}`
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
         container.style.display = 'none';
