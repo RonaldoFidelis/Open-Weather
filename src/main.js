@@ -18,17 +18,19 @@ async function previsao(cidade) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`;
 
     const get_data = await fetch(`${url}`).then(Response => Response.json());
+    console.log(get_data)
 
     const time_zone = {timezone :`${get_data.timezone}`};
     const horas = (-Math.sign(time_zone.timezone)) * Math.floor(Math.abs(time_zone.timezone) / 3600);
     const op = horas >= 0 ? '+' : '';
     const data = new Date();
-    const atual = data.toLocaleString('pt-BR', { timeZone: `Etc/GMT${op}${horas}`})
-    
-    if (atual.slice(12) >= 0 || atual.slice(12) <= 11){
-        hours.textContent = `${atual.slice(12,17)} AM`;
+    const data_temp = data.toLocaleString('pt-BR', { timeZone: `Etc/GMT${op}${horas}`})
+    const atual = data_temp.slice(12,14);
+
+    if (atual[1,2] >= 0 || atual[1,2] <= 11){
+        hours.textContent = `${atual}AM`;
     }else{
-        hours.textContent = `${atual.slice(12,17)} PM`;
+        hours.textContent = `${atual}PM`;
     }
 
     if (get_data.cod == '404') {
