@@ -94,6 +94,29 @@ body {
     padding: 20px;
 }
 
+.hours-location{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-local{
+    font-size: 10pt;
+}
+
+.local{
+    font-size: 11pt;
+    font-weight: 400;
+}
+
+.hours{
+    font-size: 11pt;
+    font-weight: 400;
+}
+
 .prevision-location {
     display: flex;
     justify-content: center;

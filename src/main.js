@@ -1,4 +1,6 @@
 let input_cidade = document.querySelector('.input-location');
+let local_cidade = document.querySelector('.local');
+let hours = document.querySelector('.hours');
 let btn_procurar = document.querySelector('.btn-search');
 let img = document.querySelector('.img-prevision');
 let temperatura = document.querySelector('.temp');
@@ -16,6 +18,18 @@ async function previsao(cidade) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`;
 
     const get_data = await fetch(`${url}`).then(Response => Response.json());
+
+    const time_zone = {timezone :`${get_data.timezone}`};
+    const horas = (-Math.sign(time_zone.timezone)) * Math.floor(Math.abs(time_zone.timezone) / 3600);
+    const op = horas >= 0 ? '+' : '';
+    const data = new Date();
+    const atual = data.toLocaleString('pt-BR', { timeZone: `Etc/GMT${op}${horas}`})
+    
+    if (atual.slice(12) >= 12 || atual.slice(12) <= 23){
+        hours.textContent = `${atual.slice(12,17)} PM`;
+    }
+
+    hours.textContent = `${atual.slice(12,17)} AM`;
 
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
@@ -60,10 +74,11 @@ async function previsao(cidade) {
         img.src = 'assets/snow.png';
     }
 
+    local_cidade.textContent = `${get_data.name}` 
     clima_cidade.textContent = `${get_data.weather[0].description}`;
     humidade.textContent = `${get_data.main.humidity}%`;
     velocidade_vento.textContent = `${get_data.wind.speed * 3.701.toFixed()}Km/h`;
-}
+}   
 
 btn_procurar.addEventListener('click', () => {
     previsao(input_cidade.value);
