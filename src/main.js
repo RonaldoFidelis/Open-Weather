@@ -25,11 +25,11 @@ async function previsao(cidade) {
     const data = new Date();
     const atual = data.toLocaleString('pt-BR', { timeZone: `Etc/GMT${op}${horas}`})
     
-    if (atual.slice(12) >= 12 || atual.slice(12) <= 23){
+    if (atual.slice(12) >= 0 || atual.slice(12) <= 11){
+        hours.textContent = `${atual.slice(12,17)} AM`;
+    }else{
         hours.textContent = `${atual.slice(12,17)} PM`;
     }
-
-    hours.textContent = `${atual.slice(12,17)} AM`;
 
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
