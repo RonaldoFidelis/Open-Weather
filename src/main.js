@@ -70,5 +70,3 @@ async function previsao(cidade) {
 btn_procurar.addEventListener('click', () => {
     previsao(input_cidade.value);
 })
-
-
