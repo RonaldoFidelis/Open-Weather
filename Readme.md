@@ -10,14 +10,12 @@
 
 <br>
 
-
 ## 🚀 Tecnologias usadas:
 
 * **[ JavaScript ](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**
 * **[ API OpenWeather ](https://openweathermap.org/api)**
 * **[ HTML ](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
 * **[ CSS ](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
-
 
 ## 📝 Maiores aprendizados
 
