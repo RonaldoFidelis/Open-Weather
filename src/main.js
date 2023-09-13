@@ -18,6 +18,7 @@ async function previsao(cidade) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chave_api}&units=metric&lang=${lang}`;
     const get_data = await fetch(`${url}`).then(Response => Response.json());
 
+    console.log(get_data)
     if (get_data.cod == '404') {
         container_error.style.display = 'flex';
         container.style.display = 'none';
