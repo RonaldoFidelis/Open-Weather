@@ -6,9 +6,13 @@
 
 <br>
 
-> Teste você mesmo: https://magenta-moxie-79035e.netlify.app/
+> Teste você mesmo: <a href="https://magenta-moxie-79035e.netlify.app/" target="_blank">Open Weather</a>
 
 <br>
+
+## Objetivo
+
+- O projeto consome a API do OpenWeather com fetchApi, e faz a busca da previsão do tempo atual dos locais.
 
 ## 🚀 Tecnologias usadas:
 
