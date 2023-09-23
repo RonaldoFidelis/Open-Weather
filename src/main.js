@@ -41,7 +41,7 @@ async function previsao(cidade) {
         btn_procurar.style.backgroundColor = '#e2effb';
         img.src = 'assets/rain.png';
     } else if (get_data.weather[0].main == 'Clouds') {
-        box.style.backgroundImage = 'linear-gradient(#FFDF01 10%, #C3C8C4 50%)';
+        box.style.backgroundImage = 'linear-gradient(#fff370 20%, #C3C8C4 50%)';
         input_cidade.style.backgroundColor = '#F2F2C2';
         btn_procurar.style.backgroundColor = '#F2F2C2';
         img.src = 'assets/cloud.png';
@@ -71,3 +71,5 @@ async function previsao(cidade) {
 btn_procurar.addEventListener('click', () => {
     previsao(input_cidade.value);
 })
+
+//fff370 FFDF01
